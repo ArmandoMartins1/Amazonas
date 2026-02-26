@@ -73,6 +73,94 @@ body {
   font-size: 28px;
   font-weight: bold;
 }
+ 
+
+    /* Espaço entre os slides */
+    .uk-slider-items.uk-grid {
+      gap: 20px;
+    }
+
+    /* Imagens estilo base */
+    .uk-slider-items .uk-panel img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+      display: block;
+      position: relative;
+    }
+
+    /* Número no canto superior esquerdo */
+    .uk-slider-items h1 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+      text-shadow: 0 0 6px rgba(0,0,0,0.7);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Slide central ativo maior e destaque */
+    .uk-slider-items .uk-width-3-4.uk-active .uk-panel img {
+      transform: scale(1.05);
+      opacity: 1;
+      filter: none;
+      z-index: 10;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Slides laterais menores e mais transparentes */
+    .uk-slider-items .uk-width-3-4:not(.uk-active) .uk-panel img {
+      transform: scale(0.85);
+      opacity: 0.5;
+      filter: brightness(0.7);
+      z-index: 1;
+      transition: all 0.5s ease;
+    }
+
+    /* Slide central com z-index para sobrepor os laterais */
+    .uk-slider-items .uk-width-3-4.uk-active {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Botões de navegação */
+    .uk-position-center-left,
+    .uk-position-center-right {
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    .uk-position-center-left:hover,
+    .uk-position-center-right:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .uk-slider-items .uk-panel img {
+        height: 200px;
+      }
+      .uk-slider-items h1 {
+        font-size: 1rem;
+        top: 5px;
+        left: 5px;
+      }
+    }
+
+
 
 /* PRODUTOS */
 .produtos {
